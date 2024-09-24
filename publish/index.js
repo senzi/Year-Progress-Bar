@@ -62,7 +62,7 @@
             }
             /*ここの問題点は、JSでの直接計算は構造上もちろん精度が低いので、間違った値が表示される可能性がある。*/
             let p = 100 - until_next_year / oneyear_time * 100; // 100 - 次の年までの時間 / 1年の時間 * 100 = 今年の完了度
-            let message = now_date.getFullYear() + " is " + Math.floor(p * message_digit) / message_digit + "% complete.";
+            let message = now_date.getFullYear() + " is " + p.toFixed(6) + "% complete."; // パーセンテージを小数点以下6桁にフォーマットする
             display_update(p, message);
         }
         old_year = now_date.getFullYear();
